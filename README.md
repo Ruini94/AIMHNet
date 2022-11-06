@@ -1,5 +1,6 @@
 # AIMHNet: An Attribute-Insensitive Multi-scale Hourglass network for rain streaks and raindrop removal
 ## Abstract
+### Deep learning has made great progress in single image rain removal. Most recent methods improve performance by increasing the depth of the network. To fully extract local and global features while reducing inference time, we propose a top-to-down attribute-insensitive multi-scale hourglass network for rain streaks and raindrops removal. Considering the difference in the size, shape, orientation and density of rain streaks and raindrops, inspired by the performance of hourglass architecture to capture multi-scale features in human pose estimation, we introduce an hourglass module to remove rain streaks and raindrops in a unified framework. This feature extraction module could capture the characteristics of rain streaks and raindrops with different attributes. These stacked hourglass blocks down-sample features and then up-sample them back to the original shape based on discrete wavelet transform (DWT) and inverse discrete wavelet transform (IDWT). We perform five sets of experiments on synthetic and real-world datasets to validate the effectiveness of our network on rain streaks and raindrop removal. The qualitative and quantitative results show that our method is suitable for removing rain streaks and raindrops.
 ### 
 ***
 ## Experiments
