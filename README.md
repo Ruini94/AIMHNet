@@ -1,9 +1,10 @@
-# Multi-scale Stacked Hourglass network for single image rain removal
+# AIMHNet: An Attribute-Insensitive Multi-scale Hourglass network for rain streaks and raindrop removal
 ## Abstract
 ### 
 ***
 ## Experiments
 ### Requirements
+* lpips
 * pytorch_wavelets
 * pytorch_msssim
 
