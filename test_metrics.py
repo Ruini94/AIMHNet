@@ -1,17 +1,18 @@
-import cv2
-from skimage.metrics import peak_signal_noise_ratio as compare_psnr
-from skimage.metrics import structural_similarity as compare_ssim
-import lpips
 import os
-from PIL import Image
 import torch.nn as nn
-from torchvision import transforms
+import cv2
+from PIL import Image
 import numpy as np
 import torch
-import colour
-from net_HourGlass import Net
-from tqdm import tqdm
+from torchvision import transforms
 
+from net_HourGlass import Net
+
+from tqdm import tqdm
+import lpips
+import colour
+from skimage.metrics import peak_signal_noise_ratio as compare_psnr
+from skimage.metrics import structural_similarity as compare_ssim
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
@@ -20,15 +21,15 @@ model = Net().cuda()
 # model = nn.DataParallel(model, [0])
 
 name = "Rain1200"
-ckp_path = r"/data/users/compare_derain/our/Rain1200/best_models/Rain1200_epoch_98_PSNR_32.7051.pth"
+ckp_path = r"best_models/Rain1200_epoch.pth"
 pre = torch.load(ckp_path)
 # pre = pre.module.state_dict()
 model.load_state_dict(pre, strict=True)
 
-path1 = r"/data/users/rain_dataset/real_rain/Rain1200/testA/"
+path1 = r"Rain1200/testA/"
 print(path1)
-path2 = r"/data/users/compare_derain/our/Rain1200/Rain1200_test_outputs/"
-targetPath = r"/data/users/rain_dataset/real_rain/Rain1200/testB/"
+path2 = r"AIMHNet/Rain1200/Rain1200_test_outputs/"
+targetPath = r"Rain1200/testB/"
 
 os.makedirs(path2, exist_ok=True)
 
