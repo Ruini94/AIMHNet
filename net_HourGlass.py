@@ -1,6 +1,6 @@
 import torch
-from torch.nn.utils import weight_norm as wn
 import torch.nn as nn
+from torch.nn.utils import weight_norm as wn
 from pytorch_wavelets import DWTForward, DWTInverse
 
 
