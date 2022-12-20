@@ -66,9 +66,9 @@ net.train()
 optimizer = optim.Adam(
     [  # name 'mean' param.shape 1,3,1,1  'std' param.shape 1,3,1,1  conv1.0.weight param.shape 32,3,4,4
         {'params': [param for name, param in net.named_parameters() if name[-4:] == 'bias' and param.requires_grad],
-         'lr': 2 * args.lr},  # 如果参数名字里面有 bias 且这个参数的 requires_grad 是 True  学习率乘以 2
+         'lr': 2 * args.lr}, 
         {'params': [param for name, param in net.named_parameters() if name[-4:] != 'bias' and param.requires_grad],
-         'lr': args.lr, 'weight_decay': args.weight_decay}  # 如果参数名字里面没有 bias 则 学习率会衰减
+         'lr': args.lr, 'weight_decay': args.weight_decay}  
     ])
 
 
